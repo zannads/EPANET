@@ -183,7 +183,7 @@ int DLLEXPORT EN_open(EN_Project p, const char *inpFile, const char *rptFile,
  **----------------------------------------------------------------
  */
  {
-   writewin(p->viewprog, FMT100);
+   //writewin(p->viewprog, FMT100);
    return openproject(p, inpFile, rptFile, outFile, FALSE);
  }     
 
@@ -466,7 +466,7 @@ int DLLEXPORT EN_openH(EN_Project p)
     if (!errcode)
     {
         p->hydraul.OpenHflag = TRUE;
-        writetime(p, FMT104);
+        //writetime(p, FMT104);
     }    
     else errmsg(p, errcode);
     return errcode;
@@ -517,7 +517,7 @@ int DLLEXPORT EN_initH(EN_Project p, int initFlag)
 
     // Initialize hydraulics solver
     inithyd(p, fflag);
-    if (p->report.Statflag > 0) writeheader(p, STATHDR, 0);
+    // if (p->report.Statflag > 0) writeheader(p, STATHDR, 0);
     return errcode;
 }
 
@@ -814,7 +814,7 @@ int DLLEXPORT EN_closeQ(EN_Project p)
     closequal(p);
     p->quality.OpenQflag = FALSE;
     closeoutfile(p);
-    writetime(p, FMT105);
+    //writetime(p, FMT105);
     return 0;
 }
 
