@@ -93,7 +93,7 @@ int openproject(Project *pr, const char *inpFile, const char *rptFile,
         }            
 
         // Write input summary to report file
-        if (pr->report.Summaryflag) writesummary(pr);
+        // if (pr->report.Summaryflag) writesummary(pr);
         pr->Openflag = TRUE;
     }
     errmsg(pr, errcode);
